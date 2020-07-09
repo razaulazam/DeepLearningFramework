@@ -57,6 +57,6 @@ class FullyConnected:
 
         return new_error_tensor
 
-    '''Returns the gradient which can be used to verify the computations using e.g. analytical gradient computation'''
+    '''Returns the gradient which can be used to verify the computations using e.g. numerical gradient computation'''
     def get_gradient_weights(self):
         return self.gradient
