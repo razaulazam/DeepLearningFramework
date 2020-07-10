@@ -18,6 +18,8 @@ class ReLU:
         '''
 
         param: input_tensor - input to the ReLU layer
+        
+        returns: output_tensor - output from the layer during the forward pass computation
 
         '''
         self.input = input_tensor.copy()
@@ -28,6 +30,8 @@ class ReLU:
         '''
 
         param: error_tensor - error signal received by the layer during the backward pass
+        
+        returns: new_error_tensor - error signal for the previous layer during the backward pass computation
 
         '''
         batch_size = self.input.shape[0]
