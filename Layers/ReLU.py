@@ -13,8 +13,13 @@ class ReLU:
 
     def __init__(self):
         '''
+        args:
         
-        Attributes: input - stores a copy of the input during the forward pass
+        None
+        
+        Attributes: 
+        
+        input - stores a copy of the input during the forward pass
         
         '''
         self.input = None
@@ -22,9 +27,13 @@ class ReLU:
     def forward(self, input_tensor):
         '''
 
-        param: input_tensor - input to the ReLU layer
+        param: 
         
-        returns: output_tensor - output from the layer during the forward pass computation
+        input_tensor (numpy.ndarray) - input to the ReLU layer
+        
+        returns: 
+        
+        output_tensor (numpy.ndarray) - output from the layer during the forward pass computation
 
         '''
         self.input = input_tensor.copy()
@@ -34,9 +43,9 @@ class ReLU:
     def backward(self, error_tensor):
         '''
 
-        param: error_tensor - error signal received by the layer during the backward pass
+        param: error_tensor (numpy.ndarray) - error signal received by the layer during the backward pass
         
-        returns: new_error_tensor - error signal for the previous layer during the backward pass computation
+        returns: new_error_tensor (numpy.ndarray) - error signal for the previous layer during the backward pass computation
 
         '''
         batch_size = self.input.shape[0]
