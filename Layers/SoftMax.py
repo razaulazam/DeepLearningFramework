@@ -11,9 +11,27 @@ import numpy as np
 class SoftMax:
 
     def __init__(self):
+        '''
+        Attributes:
+        
+        y_hat - store the copy of the input to this layer during the forward pass
+        
+        '''
         self.y_hat = None
 
     def forward(self, input_tensor, label_tensor):
+        '''
+        
+        params:
+        
+        input_tensor - input received by the layer during the forward pass
+        label_tensor - labels for the data samples (supervised learning)
+        
+        returns:
+        
+        loss - Cross Entropy loss for the current batch of input
+        
+        '''
         maximums = np.amax(input_tensor, axis=1)
 
         # For centering the data about the maximum value
@@ -42,8 +60,17 @@ class SoftMax:
 
         return loss
 
-    '''Same method as above. Added separately to represent the method used during the inference time'''
     def predict(self, input_tensor):
+        '''Same method as above. Added separately to represent the method used during the inference time
+        
+        params:
+        
+        input_tensor - input received by the layer during the forward pass
+        
+        returns:
+        
+        input_tensor - class probabilities (confidences)
+        '''
         maximums = np.amax(input_tensor, axis=1)
 
         for x in range(input_tensor.shape[0]):
@@ -58,6 +85,16 @@ class SoftMax:
         return input_tensor
 
     def backward(self, label_tensor):
+        '''
+        params:
+        
+        label_tensor - labels for the data samples (supervised learning)
+        
+        returns:
+        
+        error_tensor - error signal for the previous layer during the backward pass
+        
+        '''
         batch_size = label_tensor.shape[0]
         categories = label_tensor.shape[1]
         error_tensor = np.zeros((batch_size, categories), dtype=float)
