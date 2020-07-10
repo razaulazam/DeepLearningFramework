@@ -24,12 +24,12 @@ class SoftMax:
         
         params:
         
-        input_tensor - input received by the layer during the forward pass
-        label_tensor - labels for the data samples (supervised learning)
+        input_tensor (numpy.ndarray) - input received by the layer during the forward pass
+        label_tensor (numpy.ndarray) - labels for the data samples (supervised learning)
         
         returns:
         
-        loss - Cross Entropy loss for the current batch of input
+        loss (float) - Cross Entropy loss for the current batch of input
         
         '''
         maximums = np.amax(input_tensor, axis=1)
@@ -65,11 +65,11 @@ class SoftMax:
         
         params:
         
-        input_tensor - input received by the layer during the forward pass
+        input_tensor (numpy.ndarray) - input received by the layer during the forward pass
         
         returns:
         
-        input_tensor - class probabilities (confidences)
+        input_tensor (numpy.ndarray) - class probabilities (confidences)
         '''
         maximums = np.amax(input_tensor, axis=1)
 
@@ -88,11 +88,11 @@ class SoftMax:
         '''
         params:
         
-        label_tensor - labels for the data samples (supervised learning)
+        label_tensor (numpy.ndarray) - labels for the data samples (supervised learning)
         
         returns:
         
-        error_tensor - error signal for the previous layer during the backward pass
+        error_tensor (numpy.ndarray) - error signal for the previous layer during the backward pass
         
         '''
         batch_size = label_tensor.shape[0]
