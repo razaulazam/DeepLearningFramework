@@ -12,7 +12,12 @@ import numpy as np
 class ReLU:
 
     def __init__(self):
-        self.input = 0
+        '''
+        
+        Attributes: input - stores a copy of the input during the forward pass
+        
+        '''
+        self.input = None
 
     def forward(self, input_tensor):
         '''
