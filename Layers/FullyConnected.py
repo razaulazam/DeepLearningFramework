@@ -12,6 +12,18 @@ import numpy as np
 class FullyConnected:
 
     def __init__(self, input_size, output_size):
+        '''
+        Args:
+        
+        - input_size (int)
+        - output_size (int)
+        
+        
+        Attributes:
+        
+        - input_size: number of neurons in the previous layer
+        - output_size: number of neurons in the current layer which we are building
+        '''
         total_size = input_size + 1
         self.weights = np.random.random([total_size, output_size]) # Uniform random weight initialization
         self.delta = 1 # Initial value of the learning rate which would be optimized during training
@@ -22,6 +34,8 @@ class FullyConnected:
         '''
 
         param: input_tensor - input to the fully connected layer
+        
+        returns: output_tensor - output from the layer during the forward pass computation for the next layer
 
         '''
         batch_size = input_tensor.shape[0]
@@ -43,6 +57,8 @@ class FullyConnected:
         '''
 
         param: error_tensor - error signal received by the layer during the backward pass
+        
+        returns: new_error_tensor - error signal for the previous layer in the network during the backward pass
 
         '''
         input_weight_transpose = np.transpose(self.weights)
@@ -57,6 +73,6 @@ class FullyConnected:
 
         return new_error_tensor
 
-    '''Returns the gradient which can be used to verify the computations using e.g. numerical gradient computation'''
     def get_gradient_weights(self):
+         '''Returns the gradient which can be used to verify the computations using e.g. numerical gradient computation'''
         return self.gradient
