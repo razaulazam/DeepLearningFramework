@@ -33,9 +33,9 @@ class FullyConnected:
     def forward(self, input_tensor):
         '''
 
-        param: input_tensor - input to the fully connected layer
+        param: input_tensor (numpy.ndarray) - input to the fully connected layer
         
-        returns: output_tensor - output from the layer during the forward pass computation for the next layer
+        returns: output_tensor (numpy.ndarray) - output from the layer during the forward pass computation for the next layer
 
         '''
         batch_size = input_tensor.shape[0]
@@ -56,9 +56,9 @@ class FullyConnected:
     def backward(self, error_tensor):
         '''
 
-        param: error_tensor - error signal received by the layer during the backward pass
+        param: error_tensor (numpy.ndarray) - error signal received by the layer during the backward pass
         
-        returns: new_error_tensor - error signal for the previous layer in the network during the backward pass
+        returns: new_error_tensor (numpy.ndarray) - error signal for the previous layer in the network during the backward pass
 
         '''
         input_weight_transpose = np.transpose(self.weights)
