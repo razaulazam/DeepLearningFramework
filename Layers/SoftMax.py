@@ -3,15 +3,16 @@ import numpy as np
 class SoftMax:
 
     def __init__(self):
-        '''
+        """
         Attributes:
         
         y_hat - store the copy of the input to this layer during the forward pass
         
-        '''
+        """
         self.y_hat = None
 
     def forward(self, input_tensor, label_tensor):
+        """Performs the forward pass computations"""
         maximums = np.amax(input_tensor, axis=1)
 
         for x in range(input_tensor.shape[0]):
@@ -35,6 +36,7 @@ class SoftMax:
         return loss
 
     def predict(self, input_tensor):
+        """Performs the prediction"""
         maximums = np.amax(input_tensor, axis=1)
 
         for x in range(input_tensor.shape[0]):
@@ -49,6 +51,7 @@ class SoftMax:
         return input_tensor
 
     def backward(self, label_tensor):
+        """Performs the backward pass computations"""
         batch_size = label_tensor.shape[0]
         categories = label_tensor.shape[1]
         error_tensor = np.zeros((batch_size, categories), dtype=float)
