@@ -3,20 +3,22 @@ import numpy as np
 class ReLU:
 
     def __init__(self):
-        '''
+        """
         Attributes: 
         
         input - stores a copy of the input during the forward pass
         
-        '''
+        """
         self.input = None
 
     def forward(self, input_tensor):
+        """Performs the forward pass computations"""
         self.input = input_tensor.copy()
         output_tensor = np.maximum(0, input_tensor)
         return output_tensor
 
     def backward(self, error_tensor):
+        """Performs the backward pass computations"""
         batch_size = self.input.shape[0]
         input_size = self.input.shape[1]
         new_error_tensor = np.zeros((batch_size, input_size), dtype=float)
