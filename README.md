@@ -1,6 +1,7 @@
 # DeepLearningFramework
 Implementation of commonly used layers in Deep Learning in Python 3.7.
 
+
 Folder -> Layers:
 
 1) BatchNormalization.py: Contains the implementation of the Batch normalization layer.
@@ -30,11 +31,15 @@ Folder -> Layers:
 13) Base.py: Used a base class for the regularization layers (Batch normalization and Dropout) for setting their states in the training and evaluation phase.
 
 
+
+
 Folder -> optimizers:
 
 1) Constraints.py: Contains the implementation of the L1 and L2 weight decay.
 
 2) Optimizers.py: Contains the implementation of the commonly used optimizers in Deep learning (SGD, SGD with momentum and Adam).
+
+
 
 
 Folder -> initializers:
