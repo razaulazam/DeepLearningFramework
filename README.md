@@ -1,4 +1,4 @@
-# DeepLearningFramework
+# Deep Learning Framework
 Implementation of commonly used layers in Deep Learning in Python 3.7.
 
 
