@@ -45,6 +45,7 @@ class Adam:
         self.r_velocity = list()
 
     def calculate_update(self, individual_delta, weight_tensor, gradient_tensor):
+        """Updates the weights by computing the gradients and applying the descent algorithm"""
         if self.flag == 0:
             self.velocity.append((1 - self.momentum) * gradient_tensor)
             intermediate_gradient = np.multiply(gradient_tensor, gradient_tensor)

@@ -80,7 +80,7 @@ class LSTM:
         return output_tensor
 
     def backward(self, error_tensor):
-        """Does the backward pass computations"""
+        """Does the backward pass computations with truncated back-propagation"""
         self._gradient_weights_output = np.zeros((self.hidden_size + 1, self.output_size), dtype=float)
         stacked_size = self.hidden_size + self.input_size
         self._gradient_weights = np.zeros((stacked_size + 1, 4 * self.hidden_size), dtype=float)

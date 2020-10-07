@@ -1,5 +1,6 @@
 import numpy as np
 
+"""Implementation of different weight regularization techniques in Deep Learning"""
 class L2_Regularizer:
     """L2 regularization"""
     def __init__(self, alpha):

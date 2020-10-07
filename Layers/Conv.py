@@ -189,9 +189,11 @@ class Conv:
         self.flag_set = not self.flag_set
 
     def get_gradient_bias(self):
+        """Returns the gradients of the loss with respect to the bias vector"""
         return self.bias_gradient
 
     def backward(self, error_tensor):
+        """For computing the backward pass computations"""
         stride_dim = len(self.stride_shape)
 
         if stride_dim == 2:

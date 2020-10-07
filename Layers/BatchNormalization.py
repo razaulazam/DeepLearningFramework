@@ -67,7 +67,7 @@ class BatchNormalization(Base.BaseClass):
 
             return self.normalized_tensor
 
-        elif self.phase == Base.Phase.train:
+        elif self.phase == Base.Phase.train: # The operations to carry out during the training phase
 
             if self.channels != 0:
 
@@ -205,6 +205,7 @@ class BatchNormalization(Base.BaseClass):
     def get_gradient_weights(self):
         return self.gradient_weights
 
+    """Function for computing the numerical gradients and confirming the gradients computed by back propagation algorithm"""
     def get_gradient_bias(self):
         return self.gradient_bias
 
